@@ -10,7 +10,7 @@ const Checkout = () => {
   const [loggedinUser, setLoggedinUser] = useContext(UserContext);
 
   useEffect(() => {
-    const url = `https://glacial-brushlands-79275.herokuapp.com/checkout/${_id}`
+    const url = `https://agile-savannah-86133.herokuapp.com/checkout/${_id}`
     fetch(url)
       .then(res => res.json())
       .then(data => setDetail(data))
@@ -20,7 +20,7 @@ const Checkout = () => {
 
   const handleCheckout = () => {
     const orderInfo = { name, price, weight, ...loggedinUser, orderTime: new Date() }
-    const url = `https://glacial-brushlands-79275.herokuapp.com/addOrders`
+    const url = `https://agile-savannah-86133.herokuapp.com/addOrders`
 
     fetch(url, {
       method: 'POST',

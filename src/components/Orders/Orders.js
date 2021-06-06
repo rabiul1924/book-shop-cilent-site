@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { UserContext } from "../../App";
-import Table420 from "../Table420/Table420.js";
+import TableForOrder from "../TableForOrder/TableForOrder.js";
 
 const Orders = () => {
     const [loggedinUser, setLoggedinUser] = useContext(UserContext);
     const [orderList , setOrderList] = useState([])
 
     useEffect(() => {
-        fetch("https://glacial-brushlands-79275.herokuapp.com/orders")
+        fetch("https://agile-savannah-86133.herokuapp.com/orders")
             .then((res) => res.json())
             .then((data) => filterOrders(data));
     }, []);
@@ -39,8 +39,7 @@ const Orders = () => {
                                 <th className="bg-primary">Product Name</th> 
                                 <th className="bg-danger">Email</th>
                                 <th className="bg-success">Weight</th>
-                                <th className="bg-danger">Price</th>
-                                <th className="bg-warning">Delete</th>  
+                                <th className="bg-danger">Price</th> 
                             </tr>
                         </thead>
                     </Table>
@@ -49,7 +48,7 @@ const Orders = () => {
                             <div>
 
                                 <div className="container">
-                                    <Table420 singleOrder={singleOrder}></Table420> 
+                                    <TableForOrder singleOrder={singleOrder}></TableForOrder> 
                                    
                                 </div>
                             </div>

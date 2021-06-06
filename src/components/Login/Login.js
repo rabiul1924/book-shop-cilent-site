@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import './Login.css';
-import googleIcon from '../../assets/images/google.png';
-import fbIcon from '../../assets/images/fb.png';
+import googleIcon from '../../images/icons/google.png';
+import fbIcon from '../../images/icons/fb.png';
 import { UserContext } from '../../App';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './LogInManager';

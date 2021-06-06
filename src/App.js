@@ -4,12 +4,12 @@ import { createContext, useState } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-import SignIn from './components/SignIn/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import AddProduct from './Components/AddProduct/AddProduct';
 import AddProduct from "./components/AddProduct/AddProduct"
 import LoadProduct from './components/LoadProduct/LoadProduct';
 import Checkout from './components/Checkout/Checkout';
+import SignUpFrom from "./components/SignUpFrom/SignUpFrom";
+import Login from "./components/Login/Login";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Orders from './components/Orders/Orders';
 import Admin from './components/Admin/Admin';
@@ -26,9 +26,9 @@ import {
 export const UserContext = createContext();
 
 function App() {
-  const [loggedinUser, setLoggedinUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedinUser, setLoggedinUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Header />
         <Switch>
@@ -53,9 +53,11 @@ function App() {
           <PrivateRoute path="/editproduct">
             <EditProduct />
           </PrivateRoute >
-
-          <Route path="/signin">
-            <SignIn />
+          <Route path="/signup">
+            <SignUpFrom />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="/addProduct">
             <AddProduct />

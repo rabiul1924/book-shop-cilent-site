@@ -6,7 +6,7 @@ import { Container, Row } from 'react-bootstrap';
 const Home = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch('https://glacial-brushlands-79275.herokuapp.com/events')
+        fetch('https://agile-savannah-86133.herokuapp.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])

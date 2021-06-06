@@ -15,7 +15,7 @@ const AddProduct = () => {
             imageURL: imageURL,
         };
         console.log(data);
-        const url = `https://glacial-brushlands-79275.herokuapp.com/addEvent`;
+        const url = `https://agile-savannah-86133.herokuapp.com/addEvent`;
 
         fetch(url, {
             method: "POST",
