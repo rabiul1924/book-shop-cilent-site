@@ -4,7 +4,7 @@ import { UserContext } from "../../App";
 import TableForOrder from "../TableForOrder/TableForOrder.js";
 
 const Orders = () => {
-    const [loggedinUser, setLoggedinUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orderList , setOrderList] = useState([])
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const Orders = () => {
     }, []);
     const filterOrders = (data) => {
         const filterData = data.filter(
-            (order) => order.email == loggedinUser.email
+            (order) => order.email == loggedInUser.email
         );
         setOrderList(filterData);
     };
@@ -30,7 +30,7 @@ const Orders = () => {
                             <h3 className="text-center">Order Total:{orderList.length}{" "}</h3>
                         </Col>
                         <Col md={6}>
-                            <h2 className="text-center text-danger">This Order Made by: {loggedinUser.email}</h2>
+                            <h2 className="text-center text-danger">This Order Made by: {loggedInUser.email}</h2>
                         </Col>
                     </Row>
                     <Table striped bordered hover variant="dark">
